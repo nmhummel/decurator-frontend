@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class galleriesContainer extends Component {
+class ExhibitContainer extends Component {
     render() {
         return (
             <div>
-                galleriesContainer
+                exhibitContainer
             </div>
         )
     }
 }
 
-export default galleriesContainer;
+export default ExhibitContainer;

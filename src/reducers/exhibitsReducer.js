@@ -1,6 +1,6 @@
-export const roomReducer = (state = [], action) => {
+export const exhibitsReducer = (state = [], action) => {
     switch(action.type) {
-        case 'FETCH_ROOMS':
+        case 'FETCH_EXHIBITS':
             return action.payload
         default: 
             return state

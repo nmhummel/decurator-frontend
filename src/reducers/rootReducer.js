@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux'
-import { paintingReducer } from './paintingReducer'
-import { roomReducer } from './roomReducer'
-import { galleryReducer } from './galleryReducer'
+import { paintingsReducer } from './paintingsReducer'
+import { roomsReducer } from './roomsReducer'
+import { exhibitsReducer } from './exhibitsReducer'
 
 export const rootReducer = combineReducers({
-    paintings: paintingReducer,
-    rooms: roomReducer,
-    galleries: galleryReducer
-
+    paintings: paintingsReducer,
+    rooms: roomsReducer,
+    exhibits: exhibitsReducer
 })
