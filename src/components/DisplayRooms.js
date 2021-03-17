@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux"
 import SingleRoom from './SingleRoom'
-
+import RoomsForms from './RoomsForm'
 
 function DisplayRooms(props) {
 
@@ -11,7 +11,8 @@ function DisplayRooms(props) {
      })
 
      return (
-      <div className="all-paint-comp">
+      <div className="all-room-comp">
+        <RoomsForms />
        {roomsList}  
       </div>
     );

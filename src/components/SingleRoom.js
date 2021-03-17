@@ -5,7 +5,8 @@ class SingleRoom extends Component {
         return (
             <div className="one-paint-comp">
                 <div className="one-paint-title">
-                    Room{this.props.room.id} || "{this.props.room.name}" 
+                    
+                    Room {this.props.room.id} || "{this.props.room.name}" <br />
                 </div>
 
             </div>

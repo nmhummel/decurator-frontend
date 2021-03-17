@@ -7,9 +7,10 @@ class RoomsForm extends Component {
         name: ''
     }
 
-    handleChange = event =>{
+    handleChange = event => {
+        const { name, value } = event.target
         this.setState({
-            name: event.target.value
+            [name]: value
         })
     }
 
@@ -31,11 +32,5 @@ class RoomsForm extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        //addRoom: formData => dispatch({type: 'ADD_ROOM', payload: formData})
-        addRoom
-    }
-}
 
-export default connect(null, mapDispatchToProps)(RoomsForm);
+export default connect(null, {addRoom})(RoomsForm);
