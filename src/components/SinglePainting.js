@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
 
 class SinglePainting extends Component {
 
@@ -29,7 +30,16 @@ class SinglePainting extends Component {
     }
 }
 
-export default SinglePainting;
+const mapDispatchToProps = dispatch => {
+    return {
+        addPaintingToRoom: () => dispatch({type: 'ADD_PAINTING_TO_ROOM'})
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SinglePainting); 
+
+
+
 // artUrl: "http://www.moma.org/collection/works/78944"
 // artist: "A. E. Gallatin"
 // artistBio: "American, 1881â1952"

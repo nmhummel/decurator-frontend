@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 //import { addRoom } from '../actions/roomsActions';
 //import RoomsForm from '../components/RoomsForm'
 import DisplayRooms from '../components/DisplayRooms'
+import { fetchRooms } from '../actions/roomsActions'
 class RoomsContainer extends Component {
-    // componentDidMount() {
-    //     //this.props.addRoom()
-    // }
+    componentDidMount() {
+       this.props.fetchRooms()
+    }
 
     render() {
         return (
@@ -22,8 +23,9 @@ const mapStateToProps = ({rooms}) => {
 }
 
 const mapDispathToProps = dispatch => ({
-    addRoom: room => dispatch({name: "ADD_ROOM", room}),
-    deleteRoom: id =>dispatch({name: "DELETE_ROOM", id})  
+    fetchRooms: () => dispatch(fetchRooms()),
+    addRoom: room => dispatch({type: "ADD_ROOM", room}),
+    deleteRoom: id =>dispatch({type: "DELETE_ROOM", id})  
 })
 
 export default connect(mapStateToProps, mapDispathToProps)(RoomsContainer);
