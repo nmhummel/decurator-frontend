@@ -11,7 +11,7 @@ function DisplayPaintings(props) {
      })
 
      return (
-      <div className="all-paint-comp">
+      <div>
        {paintingsList}  
       </div>
     );

@@ -1,9 +1,17 @@
 import { Component } from 'react';
 
 class SinglePainting extends Component {
+
+    handleOnClick() {
+        this.props.addPaintingToRoom(this.props.painting.id)
+    }
+
     render() {
         return (
             <div className="one-paint-comp">
+                <div className="one-paint-photo">
+                    <img src={this.props.painting.imageUrl} alt={this.props.painting.title} />
+                </div>
                 <div className="one-paint-title">
                     Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})
                 </div>
@@ -12,7 +20,8 @@ class SinglePainting extends Component {
                     Bio: {this.props.painting.artistBio}<br />
                     Medium: {this.props.painting.medium}<br />
                     <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer">Visit Page at MoMa</a><br />
-                    <img src={this.props.painting.imageUrl} alt={this.props.painting.title} /><br />
+                    <button onClick={() => this.handleOnClick()}>Add to Room</button>
+                    <br />
                     <br />
                 </div>
             </div>

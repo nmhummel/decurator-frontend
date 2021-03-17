@@ -1,21 +1,24 @@
 import { Component } from 'react';
 import './App.css';
-import RoomsContainer from './containers/RoomsContainer'
-import PaintingsContainer from './containers/PaintingsContainer'
-//import ExhibitsContainer from './containers/ExhibitsContainer'
-
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+//import Home from './components/Home'
+import PaintingsContainer from './containers/PaintingsContainer';
+import RoomsContainer from './containers/RoomsContainer';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
-          <RoomsContainer />
-          
+        <Router />
         </header>
-        <PaintingsContainer />
+       <PaintingsContainer />
+       <RoomsContainer />
       </div>
     );
   }
+
 }
 
 export default App;
