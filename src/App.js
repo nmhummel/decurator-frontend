@@ -4,64 +4,25 @@ import {Component} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
 import PaintingsContainer from './containers/PaintingsContainer';
 import RoomsContainer from './containers/RoomsContainer';
+import Header from './components/Header.js'
 
 export default class App extends Component {
   render() {
     return (
-        <Router>
-        <div>
-            <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/paintings">Paintings</Link>
-            </li>
-            <li>
-                <Link to="/rooms">Current Rooms</Link>
-            </li>
-            </ul>
-
-            <hr />
-
-            <Switch>
-                <Route exact path="/"><Home /></Route>
-                <Route path='/paintings'><Paintings /></Route>
-                <Route path="/rooms"><Rooms /></Route>
-            </Switch>
-        </div>
-        </Router>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">Home</Route>
+          <Route exact path="/paintings"><PaintingsContainer /></Route>
+          <Route exact path="/rooms"><RoomsContainer /></Route>
+        </Switch>
+      </Router>
     );
   }
 }
 
-function Home() {
-    return (
-      <div>
-        <h2>Home Page</h2>
-      </div>
-    );
-  }
-  
-  function Paintings()  {
-    return (
-      <div>
-        <h2>Paintings</h2>
-        <PaintingsContainer />
-      </div>
-    );
-  }
-  
- function Rooms() {
-    return (
-      <div>
-        <h2>Rooms</h2>
-        <RoomsContainer />
-      </div>
-    );
-  }
+

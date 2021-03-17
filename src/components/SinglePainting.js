@@ -21,6 +21,10 @@ class SinglePainting extends Component {
                     Bio: {this.props.painting.artistBio}<br />
                     Medium: {this.props.painting.medium}<br />
                     <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer">Visit Page at MoMa</a><br />
+                    <select id="room-drop" name="room_id">
+                        {this.props.rooms.map(room => {return <option value={room.id}>{room.name}</option>}
+                        )}
+                    </select>
                     <button onClick={() => this.handleOnClick()}>Add to Room</button>
                     <br />
                     <br />

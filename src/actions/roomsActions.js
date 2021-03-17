@@ -18,5 +18,15 @@ export const addRoom = (room) => {
     }
 }
 
-
-
+export const deleteRoom = (room, id) => {
+    return dispatch => {
+        fetch(`http://127.0.0.1:3000/rooms/${id}`, {
+            method: 'DELETE',
+            body: JSON.stringify(room),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(resp => resp.json())
+        .then(room => dispatch({ type: 'DELETE_ROOM', payload: room}))
+    }
+}
+// fix this, yo

@@ -5,7 +5,8 @@ export const roomsReducer = (state = [], action) => {
         case 'ADD_ROOM':
             return [...state, action.payload]
         case 'DELETE_ROOM':
-            return {rooms: state.rooms.filter(room => room !== action.payload)}
+            //debugger;
+            return state.filter(room => room.id !== action.payload.id)
         default: 
             return state
     }
