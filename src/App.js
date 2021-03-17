@@ -23,7 +23,7 @@ export default class App extends Component {
                 <Link to="/paintings">Paintings</Link>
             </li>
             <li>
-                <Link to="/rooms">Rooms</Link>
+                <Link to="/rooms">Current Rooms</Link>
             </li>
             </ul>
 
