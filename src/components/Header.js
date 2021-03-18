@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-    Switch,
-    Route,
+    // Switch,
+    // Route,
     Link
   } from "react-router-dom";
 
@@ -33,37 +33,37 @@ function Header(props) {
         </div>  
       </nav>    
       
-      <Switch>
+      {/* <Switch>
           <Route exact path="/"><Home /></Route>
           <Route path='/paintings'><Paintings /></Route>
           <Route path="/rooms"><Rooms /></Route>
-      </Switch>
+      </Switch> */}
         
     </>
     )
 } 
 
-    function Home() {
-        return (
-          <div>
-            <h2>Home Page</h2>
-          </div>
-        );
-      }
+    // function Home() {
+    //     return (
+    //       <div>
+    //         <h2>Home Page</h2>
+    //       </div>
+    //     );
+    //   }
       
-      function Paintings()  {
-        return (
-          <div>
-            <h2>Paintings</h2>
-          </div>
-        );
-      }
+    //   function Paintings()  {
+    //     return (
+    //       <div>
+    //         <h2>Paintings</h2>
+    //       </div>
+    //     );
+    //   }
       
-     function Rooms() {
-        return (
-          <div>
-            <h2>Rooms</h2>
-          </div>
-        );
-      }
+    //  function Rooms() {
+    //     return (
+    //       <div>
+    //         <h2>Rooms</h2>
+    //       </div>
+    //     );
+    //   }
 export default Header;

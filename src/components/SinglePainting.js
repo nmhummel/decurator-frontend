@@ -40,7 +40,7 @@ class SinglePainting extends Component {
                 <div className='container-fluid'>
                     <div className='row'>
                         <div className="one-paint-photo">
-                            <h4><img src={this.props.painting.imageUrl} alt={this.props.painting.title} /></h4>
+                            <img src={this.props.painting.imageUrl} alt={this.props.painting.title} />
                         </div>
                         {/* <button className="front-flip-button" onClick={handleFlip}>Click to flip</button> */}
                     </div>
@@ -49,7 +49,7 @@ class SinglePainting extends Component {
 
             <div className='card-side side-back'>
                 <div className='container-fluid'>
-                    <h1>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h1>
+                    <h4>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h4>
                     <div className="one-paint-info">
                             Artist: {this.props.painting.artist}<br />
                             Bio: {this.props.painting.artistBio}<br />
