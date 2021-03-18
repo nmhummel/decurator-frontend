@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { rootReducer } from './reducers/rootReducer'
 import { BrowserRouter as Router } from 'react-router-dom'
+//import CardFlip from './components/CardFlip'
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
@@ -16,6 +17,7 @@ ReactDOM.render(
     <Provider store={store}> 
       <Router>
         <App />
+        {/* <CardFlip/> */}
       </Router>
     </Provider>
   </React.StrictMode>,

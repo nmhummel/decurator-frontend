@@ -22,10 +22,10 @@ const mapStateToProps = ({rooms}) => {
     return {rooms}
 }
 
-const mapDispathToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     fetchRooms: () => dispatch(fetchRooms()),
     addRoom: room => dispatch({type: "ADD_ROOM", room}),
     deleteRoom: id =>dispatch({type: "DELETE_ROOM", id})  
 })
 
-export default connect(mapStateToProps, mapDispathToProps)(RoomsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(RoomsContainer);

@@ -1,9 +1,16 @@
 .all-paint-comp {
   
 }
+.jumbotron text-center{
+  margin-bottom: 0;
+}
 
 .App {
   text-align: center;
+}
+
+.container {
+  margin-top:30px;
 }
 
 .App-logo {
@@ -32,4 +39,15 @@
   color: #61dafb;
 }
 
+
+.fakeimg {
+  height: 200px;
+  background: #aaa;
+}
+
+
+
+
+
+/* react flip */
 

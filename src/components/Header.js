@@ -7,27 +7,39 @@ import {
 
 function Header(props) {
     return(
-        <div id="header">
-            <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/paintings">Paintings</Link>
-            </li>
-            <li>
-                <Link to="/rooms">Current Rooms in Exhibit</Link>
-            </li>
-            </ul>
+    <>
+      <div className="jumbotron text-center">
+        <h1>deCURator</h1>
+        <p></p> 
+      </div>
+      <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+        <Link to="#" className="navbar-brand">Navbar</Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-            <hr />
-
-            <Switch>
-                <Route exact path="/"><Home /></Route>
-                <Route path='/paintings'><Paintings /></Route>
-                <Route path="/rooms"><Rooms /></Route>
-            </Switch>
-        </div>
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+                <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/paintings" className="nav-link">Paintings</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/rooms" className="nav-link">Current Rooms in Exhibit</Link>
+            </li>
+          </ul>
+        </div>  
+      </nav>    
+      
+      <Switch>
+          <Route exact path="/"><Home /></Route>
+          <Route path='/paintings'><Paintings /></Route>
+          <Route path="/rooms"><Rooms /></Route>
+      </Switch>
+        
+    </>
     )
 } 
 
