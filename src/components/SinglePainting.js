@@ -1,15 +1,16 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-// import CardFront from './CardFront';
-// import CardBack from './CardBack';
-// import CardFlip from './CardFlip'
-// import ReactCardFlip from "react-card-flip";
-
+import ReactCardFlip from "react-card-flip";
+import { addPaintingToRoom} from '../actions/roomsActions'
 
 class SinglePainting extends Component {
-
-    state = {
-        roomId: 1
+    constructor() {
+        super();
+        this.state = {
+            roomId: 1,
+            isFlipped: false
+        };
+        this.handleFlip = this.handleFlip.bind(this);
     }
 
     handleOnClick() {
@@ -25,29 +26,33 @@ class SinglePainting extends Component {
         })
     }
     
-
-    // handleFlip = () => {
-    //         setIsFlipped(!isFlipped);
-    // }
+    handleFlip(e) {
+        e.preventDefault();
+        this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+ 
+    }
     
+    // if (!e) var e = window.event;
+    // e.cancelBubble = true;
+    // if (e.stopPropagation) e.stopPropagation();
+
     render() {
         return (
 
         <div className="one-paint-comp">
 
-        {/* <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical"> */}
-            <div className='card-side side-front'>
+        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+            <div className='card-side side-front' onClick={this.handleFlip}>
                 <div className='container-fluid'>
                     <div className='row'>
                         <div className="one-paint-photo">
-                            <img src={this.props.painting.imageUrl} alt={this.props.painting.title} />
+                            <img src={this.props.painting.imageUrl} alt={this.props.painting.title} className="card-image"/>
                         </div>
-                        {/* <button className="front-flip-button" onClick={handleFlip}>Click to flip</button> */}
                     </div>
                 </div>
             </div>
 
-            <div className='card-side side-back'>
+            <div className='card-side side-back' onClick={this.handleFlip}>
                 <div className='container-fluid'>
                     <h4>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h4>
                     <div className="one-paint-info">
@@ -56,10 +61,10 @@ class SinglePainting extends Component {
                             Medium: {this.props.painting.medium}<br />
                             <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer">Visit Page at MoMa</a><br />
                     </div>
-                    {/* <button className="back-flip-button" onClick={handleFlip}>Click to flip</button> */}
                 </div>  
             </div>  
-        {/* </ReactCardFlip> */}
+        </ReactCardFlip>
+
             <select id="room-drop" name="roomId" onChange={this.handleChange}> 
                  {/* need onchange to update state */}
                 {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>}
@@ -78,7 +83,8 @@ class SinglePainting extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addPaintingToRoom: (roomId, painting) => dispatch({type: 'ADD_PAINTING_TO_ROOM', roomId: roomId, painting: painting}) // needs 2args of room chosen and painting
+        addPaintingToRoom: (roomId, painting) => dispatch(addPaintingToRoom(roomId, painting)) // needs 2args of room chosen and painting
+
     }
 }
 

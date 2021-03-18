@@ -17,7 +17,6 @@ function DisplayPaintings(props) {
     );
 }
 
-
 const mapStateToProps = (stateFromTheStore) => {
   console.log(stateFromTheStore)
     return {

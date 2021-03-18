@@ -28,3 +28,19 @@ export const deleteRoom = (id) => {
         .then(room => dispatch({ type: 'DELETE_ROOM', payload: room}))
     }
 }
+
+export const addPaintingToRoom = (id, painting) => {
+    return dispatch => {
+        fetch(`http://127.0.0.1:3000/rooms/${id}`, {
+            method: 'PATCH',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json' },
+            body: JSON.stringify({painting_id: painting.id})
+        })
+        .then(resp => resp.json())
+        // .then(room => dispatch({ type: 'ADD_PAINTING_TO_ROOM', payload: room}))
+        .then(room => dispatch({type: 'ADD_PAINTING_TO_ROOM', payload: {room, painting}}))
+        // does this need to be an onClick event?
+    }
+}

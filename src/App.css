@@ -1,6 +1,23 @@
 .all-paint-comp {
   
 }
+
+.card-image {
+  height: 300px;
+  width: 100%
+}
+.card-side side-front {
+  height: 350px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card-side side-back {
+  height: 350px;
+  padding: 10px;
+  margin: 10px;
+}
+
 .jumbotron text-center{
   margin-bottom: 0;
 }
@@ -42,7 +59,7 @@
 
 .fakeimg {
   height: 200px;
-  background: #aaa;
+  background: rgb(252, 152, 152);
 }
 
 
@@ -53,3 +70,21 @@
 
 /* react flip */
 
+/* photo grid */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}

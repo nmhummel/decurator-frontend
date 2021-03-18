@@ -5,15 +5,18 @@ export const roomsReducer = (state = [], action) => {
         case 'ADD_ROOM':
             return [...state, action.payload]
         case 'DELETE_ROOM':
-            debugger;
             return state.filter(room => room.id !== action.payload.id)
-        // case 'ADD_PAINTING_TO_ROOM':
-        //     debugger
-        //     return [
-        //         ...state.filter(room => room.id !== action.room.id),
-        //         Object.assign({}, action.room)
-        //       ]
-
+        case 'ADD_PAINTING_TO_ROOM':
+            let selectedRoomIndex = state.findIndex(room => room.id === action.payload.room.id)
+            //let roomPaintings = state[selectedRoom].paintings
+            //console.log(roomPaintings)
+            return (
+                [...state.slice(0, selectedRoomIndex), 
+                action.payload.room,
+                ...state.slice(selectedRoomIndex + 1)
+                ]
+            )
+            
             // return [...state] 
             // return an array
             // we need to find the room (id) and return exact same array except room they want to add painting to
