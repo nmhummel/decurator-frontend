@@ -9,7 +9,7 @@ function Header(props) {
     return(
     <>
       <div className="jumbotron text-center">
-        <h1>deCURator</h1>
+        <h1>decUrator</h1>
         <p></p> 
       </div>
       <nav className="navbar navbar-expand-sm bg-dark navbar-dark">

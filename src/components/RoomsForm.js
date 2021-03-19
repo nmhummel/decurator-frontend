@@ -23,7 +23,7 @@ class RoomsForm extends Component {
         return (
             <div>
                 <form onSubmit={ event => this.handleSubmit(event)}>
-                    <label>Name of Room in Gallery:</label><br />
+                    <label>Add a Room to the Gallery:</label><br />
                     <input type='text' value={this.state.name} onChange={this.handleChange} name="name"/>
                     <input type="submit" name="submit"/>
                 </form>

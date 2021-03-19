@@ -39,8 +39,6 @@ export const addPaintingToRoom = (id, painting) => {
             body: JSON.stringify({painting_id: painting.id})
         })
         .then(resp => resp.json())
-        // .then(room => dispatch({ type: 'ADD_PAINTING_TO_ROOM', payload: room}))
         .then(room => dispatch({type: 'ADD_PAINTING_TO_ROOM', payload: {room, painting}}))
-        // does this need to be an onClick event?
     }
 }

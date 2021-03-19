@@ -16,35 +16,20 @@ class PaintingsContainer extends Component {
         this.props.fetchPaintings()
     }
      
+
     render() {
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col-sm-8">
+                <div className="column">
                     <h2>Lots of Paintings</h2>
                     <h5>We haz them.</h5>
                     Paintings Container
                 <DisplayPaintings />
-
-                {/* <Switch>
-                    <Route exact path="/paintings">
-                        <SearchPaintings />
-                    </Route>
-           
-
-                    <Route path="/paintings/:id"  component={(routeInfo) => {
-                        const id = parseInt(routeInfo.match.params.id)
-                        const item = this.props.paintings.find(i => i.id === id)
-                        return !!item ? <SinglePainting routeInfo={routeInfo} item={item}/> : <div>Not Found!</div>
-                    }}/>
-                </Switch> */}
-                   </div>
+                <br />
                 </div>
             </div>
         );
     }
-
-    
 }
 
 export default connect(null, { fetchPaintings })(PaintingsContainer);

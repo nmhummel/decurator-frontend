@@ -1,19 +1,20 @@
 import React from "react";
 import {connect} from "react-redux"
-import SingleRoom from './SingleRoom'
+import RoomList from './RoomList'
 import RoomsForms from './RoomsForm'
 
 function DisplayRooms(props) {
 
     const rooms = props.rooms;
     const roomsList = rooms.map((room, index) => {
-      return <SingleRoom key={index} room={room} />
+      return <RoomList key={index} room={room} />
      })
 
      return (
       <div className="all-room-comp">
+        {roomsList}  
+        <br />
         <RoomsForms />
-       {roomsList}  
       </div>
     );
 }

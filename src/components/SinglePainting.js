@@ -32,58 +32,46 @@ class SinglePainting extends Component {
  
     }
     
-    // if (!e) var e = window.event;
-    // e.cancelBubble = true;
-    // if (e.stopPropagation) e.stopPropagation();
+    stopFlip = (e) =>{
+        e.stopPropagation()
+    }
+
 
     render() {
         return (
-
-        <div className="one-paint-comp">
-
-        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-            <div className='card-side side-front' onClick={this.handleFlip}>
-                <div className='container-fluid'>
-                    <div className='row'>
-                        <div className="one-paint-photo">
-                            <img src={this.props.painting.imageUrl} alt={this.props.painting.title} className="card-image"/>
+            <div className="one-paint-comp">
+                <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+                    <div class="grid-container" onClick={this.handleFlip}>
+                        <div className='grid-item'>
+                                <img src={this.props.painting.imageUrl} alt={this.props.painting.title} className="card-image"/>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div className='card-side side-back' onClick={this.handleFlip}>
-                <div className='container-fluid'>
-                    <h4>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h4>
-                    <div className="one-paint-info">
-                            Artist: {this.props.painting.artist}<br />
-                            Bio: {this.props.painting.artistBio}<br />
-                            Medium: {this.props.painting.medium}<br />
-                            <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer">Visit Page at MoMa</a><br />
+            
+                    <div class="grid-container" onClick={this.handleFlip}>
+                        <div className="grid-item">
+                                <h4>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h4>
+                                Artist: {this.props.painting.artist}<br />
+                                Bio: {this.props.painting.artistBio}<br />
+                                Medium: {this.props.painting.medium}<br />
+                                <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer" onClick={this.stopFlip}>Visit Page at MoMa</a><br />
+                        </div>
                     </div>
-                </div>  
-            </div>  
-        </ReactCardFlip>
-
-            <select id="room-drop" name="roomId" onChange={this.handleChange}> 
-                 {/* need onchange to update state */}
-                {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>}
-                )}
-            </select>
-            <button onClick={() => this.handleOnClick()} className='btn btn-primary' value='Add to Room'>Add to Room</button>
-            <br /><br />
-        </div>
+                </ReactCardFlip>
+                <select id="room-drop" name="roomId" onChange={this.handleChange}> 
+                    {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>}
+                    )}
+                </select>
+                <button onClick={() => this.handleOnClick()} className='btn btn-primary' value='Add to Room'>Add to Room</button>
+                <br />
+            </div>
         
         )
     }
 }
-// gotta hit back end (room and room's painting)
-// resp => room and room's painting
-
 
 function mapDispatchToProps(dispatch) {
     return {
-        addPaintingToRoom: (roomId, painting) => dispatch(addPaintingToRoom(roomId, painting)) // needs 2args of room chosen and painting
+        addPaintingToRoom: (roomId, painting) => dispatch(addPaintingToRoom(roomId, painting)) 
 
     }
 }

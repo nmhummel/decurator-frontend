@@ -5,14 +5,17 @@ import SinglePainting from './SinglePainting'
 
 function DisplayPaintings(props) {
 
+
     const paintings = props.paintings;
     const paintingsList = paintings.map((painting, index) => {
       return <SinglePainting key={index} painting={painting} rooms={props.rooms}/>
-     })
+    })
 
-     return (
+    return (
       <div>
-       {paintingsList}  
+        {paintingsList}  
+        <br />
+        <button>Click to see different paintings</button>
       </div>
     );
 }

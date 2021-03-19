@@ -1,7 +1,11 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteRoom } from '../actions/roomsActions'
-class SingleRoom extends Component {
+import {
+    Link
+  } from "react-router-dom";
+
+class RoomList extends Component {
 
     handleOnClick() {
         //debugger;
@@ -12,7 +16,7 @@ class SingleRoom extends Component {
         return (
             <div className="one-paint-comp">
                 <div className="one-paint-title">
-                    Room {this.props.room.id} || "{this.props.room.name}" <br />
+                    <Link to={"/rooms/"+ this.props.room.id} className="room-link">Room {this.props.room.id} || "{this.props.room.name}" </Link><br />
                     <button onClick={() => this.handleOnClick()}>Delete Room</button>
                     <br />
                 </div>
@@ -24,5 +28,5 @@ class SingleRoom extends Component {
 
 
 
-export default connect(null, {deleteRoom})(SingleRoom); 
+export default connect(null, {deleteRoom})(RoomList); 
 

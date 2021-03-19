@@ -10,7 +10,7 @@ class SearchPaintings extends Component{
 
   handleInputChange = (e) => {
     const search = e.target.value
-    this.setState({search: search}) // will cause a rerender
+    this.setState({search: search}) // will cause a re-render
   }
 
   render(){
