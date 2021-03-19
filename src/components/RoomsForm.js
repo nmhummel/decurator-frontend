@@ -14,7 +14,7 @@ class RoomsForm extends Component {
         })
     }
 
-    componentWillUnmount = (name) => {
+    componentWillUnmount = () => {
         this.setState({
             name: ""
         })

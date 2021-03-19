@@ -17,16 +17,15 @@ class RoomList extends Component {
             <div className="one-paint-comp">
                 <div className="one-paint-title">
                     <Link to={"/rooms/"+ this.props.room.id} className="room-link">Room {this.props.room.id} || "{this.props.room.name}" </Link><br />
-                    <button onClick={() => this.handleOnClick()}>Delete Room</button>
-                    <br />
+                    <button id="buttons" onClick={() => this.handleOnClick()}>Delete Room</button>
+                    <br /><br />
                 </div>
-            <br />
             </div>
         )
     }
 }
 
-
+// key={this.props.room.id}
 
 export default connect(null, {deleteRoom})(RoomList); 
 

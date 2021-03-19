@@ -3,51 +3,29 @@ import { connect } from 'react-redux';
 import { deleteRoom } from '../actions/roomsActions'
 import {fetchSingleRoom} from '../actions/roomsActions'
 import {fetchPaintings} from '../actions/paintingsActions'
-
-
 // import {
 //     Link
 //   } from "react-router-dom";
 
 class RoomList extends Component {
  
-    // allRooms = (props) => props.rooms.map((room, index) => {
-    //     return console.log("allRooms", room, index)
-        
-    // })
-   
-    // componentDidMount() {
-    //     console.log("this.props.room", this.props.rooms)
-    // }
-   
-    // }
     render() {
         
-        // {cases.map(indivCase => <ul key={indivCase.id}>
-//         <ol>
-//         <Link to={`/categories/${indivCase.category_id}/cases/${indivCase.id}`}>
-//             <button>{indivCase.name}</button>
-//         </Link>
-//     </ol>
-// </ul>)}
-
-
-//    paintingsList = () => paintings.map((painting, index) => {
-    //     return <SinglePainting key={index} painting={painting} rooms={props.rooms} />
         const currentRoom = this.props.currentRoom
         const currentPaintings = currentRoom.paintings
-        
+    
         //debugger
         return (
             
             <div className="one-room-comp">
            
-            I am a single room page!<br/>
+            Click on each painting to visit its page at the MoMA's website.<br/>
 
             {currentPaintings.map(paint => 
                 <div className="one-painting">
                  <h3>{paint.title}</h3>
-                <img src={paint.imageUrl} alt={paint.title +" image"} />
+                <a href={paint.artUrl} target="_blank" rel="noreferrer"><img src={paint.imageUrl} alt={paint.title +" image"}/></a>
+                <br /><br />
             </div>)
             }
 
