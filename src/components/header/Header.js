@@ -1,25 +1,26 @@
 import React from 'react'
+import './Navbar.css';
 import {
     // Switch,
     // Route,
     Link
   } from "react-router-dom";
 
-function Header(props) {
+function Header() {
     return(
     <div className="header-overall">
-      <div className="jumbotron text-center">
+      <div className="logo-image">
         <img src="decurator.png" alt="decurator-logo"/>
         <p></p> 
       </div>
-      <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-        <Link to="#" className="navbar-brand">Navbar</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <nav className="LinkBar">
+        <Link to="#" className="LinkBar">LinkBar</Link>
+        {/* <button className="LinkBar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleLinkBar">
+          <span className="LinkBar-toggler-icon"></span>
+        </button> */}
 
-        <div className="collapse navbar-collapse" id="collapsibleNavbar"> 
-          <ul className="navbar-nav">
+        <div className="LinkBar-collapse" id="collapsibleLinkBar"> 
+          <ul className="LinkBar-nav">
             <li className="nav-item">
                 <Link to="/" className="nav-link">Home</Link>
             </li>

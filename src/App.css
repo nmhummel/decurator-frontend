@@ -1,3 +1,7 @@
+body {
+  background-color: red;
+}
+
 .grid {
   /* grid-template-columns: 100px 100px 100px;
   grid-template-rows: 100px 100px 100px; */
@@ -71,13 +75,14 @@ header {
 }
 
 .App-link {
-  color: #61dafb;
+  color: red;
 }
 .one-room-comp {
   margin: 20px;
  }
 
 .room-link {
+  color: red;
   margin:5px;
 }
 

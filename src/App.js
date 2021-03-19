@@ -9,7 +9,7 @@ import {
   } from "react-router-dom";
 import PaintingsContainer from './containers/PaintingsContainer';
 import RoomsContainer from './containers/RoomsContainer';
-import Header from './components/Header.js'
+import Header from './components/header/Header'
 import {fetchRooms} from './actions/roomsActions'
 import WelcomeContainer from './containers/WelcomeContainer';
 import SingleRoom from './components/SingleRoom';
