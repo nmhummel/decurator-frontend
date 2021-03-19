@@ -29,8 +29,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/"><WelcomeContainer /></Route>
           <Route exact path="/paintings"><PaintingsContainer /></Route>
-          <Route path="/rooms/:id" component={SingleRoom} />
-          <Route exact path="/rooms"><RoomsContainer /></Route>
+          { this.props.rooms.length > 0 && <Route path="/rooms/:id" component={SingleRoom} /> }
+          <Route exact path="/rooms"><RoomsContainer /></Route> 
         </Switch>
       </Router>
     );
@@ -41,4 +41,8 @@ const mapDispatchToProps = (dispatch) => {
   return {dispatchFetchRooms: () => dispatch(fetchRooms())}
 }
 
-export default connect(null, mapDispatchToProps)(App)
+const mapStateToProps = ({rooms}) => {
+  return {rooms}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

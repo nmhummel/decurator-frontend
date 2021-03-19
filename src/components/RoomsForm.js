@@ -14,10 +14,19 @@ class RoomsForm extends Component {
         })
     }
 
+    componentWillUnmount = (name) => {
+        this.setState({
+            name: ""
+        })
+    }
+
     handleSubmit = event => {
         event.preventDefault();
         this.props.addRoom(this.state)
+        this.componentWillUnmount();
     }
+
+   
 
     render() {
         return (

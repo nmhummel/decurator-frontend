@@ -11,7 +11,6 @@ function DisplayPaintings(props) {
     })
 
     const refreshPaintings =() => {
-      console.log(fetchPaintings())
       props.fetchPaintings()
     }
 
@@ -20,7 +19,6 @@ function DisplayPaintings(props) {
         {paintingsList}  
         <br />
         <button onClick={refreshPaintings}>Click to see different paintings</button>
-        {/* call the same fetch action on the click */}
       </div>
     );
 }

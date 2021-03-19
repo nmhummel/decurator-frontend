@@ -22,7 +22,8 @@ function DisplayRooms(props) {
 const mapStateToProps = (stateFromStore) => {
   console.log(stateFromStore)
     return {
-        rooms: stateFromStore.rooms
+        rooms: stateFromStore.rooms,
+        paintings: stateFromStore.paintings // ???
     }
 }
 // this function needs to return what values we want as props
