@@ -11,6 +11,11 @@
   height: 350px;
 }
 
+.jumbotron text-center {
+  height: 20px;
+  top: 5px;
+}
+
 .grid-item{
   height:350px;
   margin-top: 15px;
@@ -25,10 +30,14 @@
   margin: 50px;
 }
 
-
+header {
+  height: 20px;
+  top: 5px;
+}
 
 .jumbotron text-center{
   margin-bottom: 0;
+  
 }
 
 .App {

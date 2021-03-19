@@ -6,6 +6,14 @@ export const fetchRooms = () => {
     }
 }
 
+export const fetchSingleRoom = (id) => {
+    return dispatch => {
+        fetch(`http://127.0.0.1:3000/rooms/${id}`)
+        .then(resp => resp.json())
+        .then(room => dispatch({ type: 'FETCH_SINGLE_ROOMS', payload: room}))
+    }
+}
+
 export const addRoom = (room) => {
     return dispatch => {
         fetch('http://127.0.0.1:3000/rooms', {

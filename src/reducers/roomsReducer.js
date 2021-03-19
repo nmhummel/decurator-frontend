@@ -2,6 +2,9 @@ export const roomsReducer = (state = [], action) => {
     switch(action.type) {
         case 'FETCH_ROOMS':
             return action.payload
+        case 'FETCH_SINGLE_ROOM':
+            debugger
+            return state.findIndex(room => room.id === action.payload.room.id)
         case 'ADD_ROOM':
             return [...state, action.payload]
         case 'DELETE_ROOM':

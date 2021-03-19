@@ -11,7 +11,8 @@ import PaintingsContainer from './containers/PaintingsContainer';
 import RoomsContainer from './containers/RoomsContainer';
 import Header from './components/Header.js'
 import {fetchRooms} from './actions/roomsActions'
-//import RoomList from './components/RoomList';
+import WelcomeContainer from './containers/WelcomeContainer';
+import SingleRoom from './components/SingleRoom';
 
 
 class App extends Component {
@@ -26,9 +27,9 @@ class App extends Component {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/">Home</Route>
+          <Route exact path="/"><WelcomeContainer /></Route>
           <Route exact path="/paintings"><PaintingsContainer /></Route>
-          {/* <Route path="/rooms/:id"><RoomList /></Route> */}
+          <Route path="/rooms/:id" component={SingleRoom} />
           <Route exact path="/rooms"><RoomsContainer /></Route>
         </Switch>
       </Router>

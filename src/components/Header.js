@@ -7,7 +7,7 @@ import {
 
 function Header(props) {
     return(
-    <>
+    <div className="header-overall">
       <div className="jumbotron text-center">
         <h1>decUrator</h1>
         <p></p> 
@@ -18,7 +18,7 @@ function Header(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <div className="collapse navbar-collapse" id="collapsibleNavbar"> 
           <ul className="navbar-nav">
             <li className="nav-item">
                 <Link to="/" className="nav-link">Home</Link>
@@ -39,7 +39,7 @@ function Header(props) {
           <Route path="/rooms"><Rooms /></Route>
       </Switch> */}
         
-    </>
+    </div>
     )
 } 
 

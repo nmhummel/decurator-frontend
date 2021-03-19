@@ -41,13 +41,13 @@ class SinglePainting extends Component {
         return (
             <div className="one-paint-comp">
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-                    <div class="grid-container" onClick={this.handleFlip}>
+                    <div className="grid-container" onClick={this.handleFlip}>
                         <div className='grid-item'>
                                 <img src={this.props.painting.imageUrl} alt={this.props.painting.title} className="card-image"/>
                         </div>
                     </div>
             
-                    <div class="grid-container" onClick={this.handleFlip}>
+                    <div className="grid-container" onClick={this.handleFlip}>
                         <div className="grid-item">
                                 <h4>Item #{this.props.painting.id} || "{this.props.painting.title}" ({this.props.painting.date})</h4>
                                 Artist: {this.props.painting.artist}<br />
