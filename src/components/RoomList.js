@@ -14,12 +14,9 @@ class RoomList extends Component {
 
     render() {
         return (
-            <div className="one-paint-comp">
-                <div className="one-paint-title">
-                    <Link to={"/rooms/"+ this.props.room.id} className="room-link">Room {this.props.room.id} || "{this.props.room.name}" </Link><br />
-                    <button id="buttons" onClick={() => this.handleOnClick()}>Delete Room</button>
-                    <br /><br />
-                </div>
+            <div className="all-comp-room">
+                <Link to={"/rooms/"+ this.props.room.id} className="room-link">Room {this.props.room.id} &bull; "{this.props.room.name}" </Link>
+                <button id="buttons" onClick={() => this.handleOnClick()}>Delete Room</button>
             </div>
         )
     }

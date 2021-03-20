@@ -1,43 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 2.5rem;
+  justify-content:center;
+  padding: 20px 0px 20px 0px;
   position: absolute;
   z-index: 1;
   width: 100%;
+  overflow: auto;
+  background-color: #836060;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 28px;
 }
 
-.navbar-sticky {
-  background: #333;
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 1px 1px 1px #222;
-  animation: moveDown 0.5s ease-in-out;
+
+.navbar a, .a-class {
+  color: #000000;
+
+  text-decoration: none;
+  background-color: transparent; }
+  a:hover {
+    color: #000000a4;
+ }
+
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  float: left;
+
+  background-color: #83606042;
+
 }
 
-.navbar--logo {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem;
-  animation: rotate 0.7s ease-in-out 0.5s;
+.nav-li {
+  float: left;
 }
 
-@keyframes moveDown {
-  from {
-    transform: translateY(-5rem);
-  }
-  to {
-    transform: translateY(0rem);
-  }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotateY(360deg);
-  }
-  100% {
-    transform: rotateY(0rem);
-  }
+li a:hover {
+  background-color: #e9b4b478;
 }
+
+

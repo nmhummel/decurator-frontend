@@ -1,120 +1,169 @@
-body {
-  background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+html body {
+  margin: 0;
+  font-size: 28px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #f8f0ef;
+  top:350px;
 }
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 100;
+  min-width: 100%;
+  min-height: 80%;
+}
+
+.video-content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  background-color: #e6dede;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 80px;
+  top:350px;
+   
+}
+p {
+      font-size: 30px;
+}
+
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
+
+
+
+#intro {
+  font-size: larger;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  top:450px;
+}
+
+.content {
+  padding: 16px;
+  padding-top: 50px;
+  top:450px;
+}
+
+.welcome {
+  padding-top: 50px;
+  text-align: center;
+  top:450px;
+}
+
+.room-form, h3 {
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.w3-third {
+  width: 600px;
+  margin-left: 25px;
+}
+
+.card-image {
+  border: #ac7a07c4 15px groove;
+}
+
+.all-comp {
+  top:450px;
+  margin: 50px;
+  margin-top: 300px;
+}
+
+.all-comp-room {
+  top:550px;
+  margin: 50px;
+  margin-left: 100px;
+  left: 200px;
+  margin-top: 25px;
+  float: left;
+  width: 25%;
+
+}
+
+.one-room-comp {
+  top:550px;
+  margin: 50px;
+  margin-top: 25px;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
+.container {
+  top:450px;
+  margin-top:300px;
+  margin-left: 40px;
+}
+
+.change-paintings, .room-form, .one-painting{
+  top:450px;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+
 
 .grid {
   /* grid-template-columns: 100px 100px 100px;
   grid-template-rows: 100px 100px 100px; */
   display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows: 300px 300px 300px 300px 300px;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
   justify-items: stretch;
   align-items: stretch;
   height: 350px;
-}
-
-.jumbotron text-center {
-  height: 20px;
-  top: 5px;
 }
 
 .grid-item{
   height:350px;
   margin-top: 15px;
   vertical-align: middle;
-}
-
-.all-paint-comp {
-  background-color: #61dafb;
-}
-
-.all-room-comp {
-  margin: 50px;
-}
-
-header {
-  height: 20px;
-  top: 5px;
-}
-
-.jumbotron text-center{
-  margin-bottom: 0;
   
 }
 
-.App {
-  text-align: center;
-}
-
-.container {
-  margin-top:30px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: rgb(0, 162, 232);
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: red;
-}
-.one-room-comp {
-  margin: 20px;
- }
-
-.room-link {
-  color: red;
-  margin:5px;
-}
-
-.one-paint-photo {
-  font-size: 10px;
-  padding: 5px;
-}
-
 #buttons {
-  margin:5px;
+  margin-left:15px;
   padding: 5px;
 }
-/* react flip */
 
-/* photo grid */
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
 
 
 

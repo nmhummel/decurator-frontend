@@ -30,7 +30,8 @@ class RoomsForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="room-form">
+                <br /><br />
                 <form onSubmit={ event => this.handleSubmit(event)}>
                     <label>Add a Room to the Gallery:</label><br />
                     <input type='text' value={this.state.name} onChange={this.handleChange} name="name"/>

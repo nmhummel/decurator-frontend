@@ -20,13 +20,12 @@ class PaintingsContainer extends Component {
     render() {
         return (
             <div className="container">
-                <div className="column">
-                    <h2>Lots of Paintings</h2>
-                    <h5>We haz them.</h5>
-                    Paintings Container
+                <br /><br /><br />
+                <div id="intro">Take a look at these beautiful paintings and add them
+                        to the rooms you created.</div>
+
                 <DisplayPaintings />
                 <br />
-                </div>
             </div>
         );
     }

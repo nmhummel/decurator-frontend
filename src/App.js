@@ -13,7 +13,7 @@ import Header from './components/header/Header'
 import {fetchRooms} from './actions/roomsActions'
 import WelcomeContainer from './containers/WelcomeContainer';
 import SingleRoom from './components/SingleRoom';
-
+import Navbar from './components/header/Navbar'
 
 class App extends Component {
 
@@ -25,8 +25,11 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <div className="sticky">
         <Header />
-        <Switch>
+        <Navbar />
+        </div>
+        <Switch className="content">
           <Route exact path="/"><WelcomeContainer /></Route>
           <Route exact path="/paintings"><PaintingsContainer /></Route>
           { this.props.rooms.length > 0 && <Route path="/rooms/:id" component={SingleRoom} /> }

@@ -39,7 +39,13 @@ class SinglePainting extends Component {
 
     render() {
         return (
-            <div className="one-paint-comp">
+            <div className="w3-third" id="myGrid">
+
+                <select id="room-drop" name="roomId" onChange={this.handleChange}> 
+                    {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>})}
+                </select>
+                <button onClick={() => this.handleOnClick()} id="buttons" value='Add to Room'>Add to Room</button>
+
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                     <div className="grid-container" onClick={this.handleFlip}>
                         <div className='grid-item'>
@@ -53,16 +59,12 @@ class SinglePainting extends Component {
                                 Artist: {this.props.painting.artist}<br />
                                 Bio: {this.props.painting.artistBio}<br />
                                 Medium: {this.props.painting.medium}<br />
-                                <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer" onClick={this.stopFlip}>Visit Page at MoMa</a><br />
+                                <a href={this.props.painting.artUrl} target="_blank" rel="noreferrer" onClick={this.stopFlip}>Visit Page at MoMa</a>
                         </div>
                     </div>
                 </ReactCardFlip>
-                <select id="room-drop" name="roomId" onChange={this.handleChange}> 
-                    {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>}
-                    )}
-                </select>
-                <button onClick={() => this.handleOnClick()} className='btn btn-primary' value='Add to Room'>Add to Room</button>
-                <br />
+
+                <br /><br />
             </div>
         
         )

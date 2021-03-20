@@ -11,10 +11,10 @@ function DisplayRooms(props) {
      })
 
      return (
-      <div className="all-room-comp">
-        {roomsList}  
-        <br />
+      <div className="all-comp">
         <RoomsForms />
+        <br />
+        {roomsList}  
       </div>
     );
 }

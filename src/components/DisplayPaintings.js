@@ -15,11 +15,15 @@ function DisplayPaintings(props) {
     }
 
     return (
-      <div>
-        {paintingsList}  
-        <br />
-        <button onClick={refreshPaintings}>Click to see different paintings</button>
+      <><br />
+      <div className="change-paintings">
+        Don't see anything you like? <button onClick={refreshPaintings}>Click to see different paintings</button> 
+      <br /><br />
+      <br />
+          {paintingsList} 
       </div>
+        <br />
+      </>
     );
 }
 
