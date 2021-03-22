@@ -1,24 +1,24 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchSingleRoom} from '../actions/roomsActions'
-import {fetchPaintings} from '../actions/paintingsActions'
+
 class SingleRoom extends Component {
  
     render() {
-        
-        const currentRoom = this.props.currentRoom
-        const currentPaintings = currentRoom.paintings
-    
+        const whereAreWe = this.props.currentRoom
+        const currentPaintings = whereAreWe.paintings
+        console.log("currentPaintings", currentPaintings)
         return (
             <div className="one-room-comp">
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                Room: {currentRoom.name}
+                Room: {whereAreWe.name}
                 <br/>
                 Click on each painting to visit its page at the MoMA's website.<br/><br/>
                 {currentPaintings.map(paint => 
-                    <div className="w3-third">
+                    <div className="w3-third" key={paint.id}>
                     {paint.title} by {paint.artist}<br/>
-                    <a href={paint.artUrl} target="_blank" rel="noreferrer"><img src={paint.imageUrl} class="card-image" alt={paint.title +" image"}/></a>
+                    <a href={paint.artUrl} target="_blank" rel="noreferrer">
+                        <img src={paint.imageUrl} className="card-image" alt={paint.title +" image"}/>
+                    </a>
                     <br /><br />
                 </div>)
                 }
@@ -27,11 +27,11 @@ class SingleRoom extends Component {
     } 
 }
 
-
 const mapStateToProps = ({rooms}, ownProps) => {
     const currentRoom = rooms.find(room => room.id === parseInt(ownProps.match.params.id))
+    console.log("ownProps", ownProps)
     console.log("currentRoom", currentRoom)
     return {currentRoom}
 }
 
-export default connect(mapStateToProps, {fetchSingleRoom, fetchPaintings})(SingleRoom); 
+export default connect(mapStateToProps)(SingleRoom); 

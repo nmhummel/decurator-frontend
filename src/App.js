@@ -9,11 +9,12 @@ import {
   } from "react-router-dom";
 import PaintingsContainer from './containers/PaintingsContainer';
 import RoomsContainer from './containers/RoomsContainer';
-import Header from './components/header/Header'
-import {fetchRooms} from './actions/roomsActions'
+import Header from './components/header/Header';
+import {fetchRooms} from './actions/roomsActions';
 import WelcomeContainer from './containers/WelcomeContainer';
 import SingleRoom from './components/SingleRoom';
-import Navbar from './components/header/Navbar'
+import Navbar from './components/header/Navbar';
+import About from './components/header/About';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
         <Switch className="content">
           <Route exact path="/"><WelcomeContainer /></Route>
           <Route exact path="/paintings"><PaintingsContainer /></Route>
+          <Route exact path="/about"><About /></Route>
           { this.props.rooms.length > 0 && <Route path="/rooms/:id" component={SingleRoom} /> }
           <Route exact path="/rooms"><RoomsContainer /></Route> 
         </Switch>

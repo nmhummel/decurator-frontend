@@ -11,7 +11,7 @@ class WelcomeContainer extends Component {
                     <source src="moma.mp4" type="video/mp4" />
                 </video>
           
-                <div class="video-content">
+                <div className="video-content">
 
                     <p>
                     All paintings are from the <a href="https://www.moma.org/" target="_blank" rel="noreferrer">Modern Museum of Art (MoMA)</a> located in New York City. 

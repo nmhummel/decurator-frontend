@@ -17,6 +17,13 @@ html body {
   min-height: 80%;
 }
 
+.about {
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  margin-top: 450px;
+}
+
 .video-content {
   position: fixed;
   bottom: 0;
@@ -37,7 +44,7 @@ html body {
    
 }
 p {
-      font-size: 30px;
+  font-size: 30px;
 }
 
 
