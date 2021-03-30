@@ -6,7 +6,7 @@ class SingleRoom extends Component {
     render() {
         const whereAreWe = this.props.currentRoom
         const currentPaintings = whereAreWe.paintings
-        console.log("currentPaintings", currentPaintings)
+
         return (
             <div className="one-room-comp">
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -29,8 +29,6 @@ class SingleRoom extends Component {
 
 const mapStateToProps = ({rooms}, ownProps) => {
     const currentRoom = rooms.find(room => room.id === parseInt(ownProps.match.params.id))
-    console.log("ownProps", ownProps)
-    console.log("currentRoom", currentRoom)
     return {currentRoom}
 }
 

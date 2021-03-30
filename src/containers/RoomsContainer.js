@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-//import { addRoom } from '../actions/roomsActions';
-//import RoomsForm from '../components/RoomsForm'
-import DisplayRooms from '../components/DisplayRooms'
+import DisplayRooms from '../components/rooms/DisplayRooms'
 import { fetchRooms } from '../actions/roomsActions'
 class RoomsContainer extends Component {
     componentDidMount() {

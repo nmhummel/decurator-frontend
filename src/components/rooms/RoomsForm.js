@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addRoom } from '../actions/roomsActions'
+import { addRoom } from '../../actions/roomsActions'
 
 class RoomsForm extends Component {
     state = {

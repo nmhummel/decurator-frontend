@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactCardFlip from "react-card-flip";
-import { addPaintingToRoom} from '../actions/roomsActions'
+import { addPaintingToRoom } from '../../actions/roomsActions';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 class SinglePainting extends Component {
     constructor() {
@@ -14,12 +16,10 @@ class SinglePainting extends Component {
     }
 
     handleOnClick() {
-        console.log(this.state.roomId)
         this.props.addPaintingToRoom(this.state.roomId, this.props.painting)
     }
 
     handleChange = event => {
-        console.log(event.target.value)
         const { name, value } = event.target
         this.setState({
             [name]: value
@@ -29,23 +29,15 @@ class SinglePainting extends Component {
     handleFlip(e) {
         e.preventDefault();
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
- 
     }
     
     stopFlip = (e) =>{
         e.stopPropagation()
     }
 
-
     render() {
         return (
             <div className="w3-third" id="myGrid">
-
-                <select id="room-drop" name="roomId" onChange={this.handleChange}> 
-                    {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>})}
-                </select>
-                <button onClick={() => this.handleOnClick()} id="buttons" value='Add to Room'>Add to Room</button>
-
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                     <div className="grid-container" onClick={this.handleFlip}>
                         <div className='grid-item'>
@@ -64,7 +56,15 @@ class SinglePainting extends Component {
                     </div>
                 </ReactCardFlip>
 
-                <br /><br />
+                <select id="room-drop" name="roomId" onChange={this.handleChange}> 
+                    {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>})}
+                </select>
+                
+                <Popup trigger={<button onClick={() => this.handleOnClick()} id="buttons" value='Add to Room'>Add to Room</button>} position="right center">
+                    <div>Painting Added</div>
+                </Popup>
+
+                    <br /><br /><br/><br/>
             </div>
         
         )

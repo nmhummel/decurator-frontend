@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteRoom } from '../actions/roomsActions'
+import { deleteRoom } from '../../actions/roomsActions'
 import {
     Link
   } from "react-router-dom";

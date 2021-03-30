@@ -12,7 +12,7 @@ import RoomsContainer from './containers/RoomsContainer';
 import Header from './components/header/Header';
 import {fetchRooms} from './actions/roomsActions';
 import WelcomeContainer from './containers/WelcomeContainer';
-import SingleRoom from './components/SingleRoom';
+import SingleRoom from './components/rooms/SingleRoom';
 import Navbar from './components/header/Navbar';
 import About from './components/header/About';
 

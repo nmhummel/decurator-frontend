@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPaintings } from '../actions/paintingsActions'
-import DisplayPaintings from '../components/DisplayPaintings'
-//import { Suspense } from 'react';
-// import SearchPaintings from '../components/SearchPaintings';
-// import {
-//     Switch,
-//     Route
-//   } from "react-router-dom";
-// import SinglePainting from '../components/SinglePainting';
-
-//const LazyComponent = React.lazy(() => import('../components/DisplayPaintings'))
+import DisplayPaintings from '../components/paintings/DisplayPaintings'
 class PaintingsContainer extends Component {
     componentDidMount() {
         this.props.fetchPaintings()
     }
      
+    refreshPaintings = () => {
+      this.props.fetchPaintings()
+    }
 
     render() {
         return (
@@ -23,8 +17,7 @@ class PaintingsContainer extends Component {
                 <br /><br /><br />
                 <div id="intro">Take a look at these beautiful paintings and add them
                         to the rooms you created.</div>
-
-                <DisplayPaintings />
+                <DisplayPaintings refreshPaintings = {this.refreshPaintings}/>
                 <br />
             </div>
         );
