@@ -4,7 +4,9 @@ import { fetchPaintings } from '../actions/paintingsActions'
 import DisplayPaintings from '../components/paintings/DisplayPaintings'
 class PaintingsContainer extends Component {
     componentDidMount() {
+        console.log("a")
         this.props.fetchPaintings()
+        console.log("b")
     }
      
     refreshPaintings = () => {

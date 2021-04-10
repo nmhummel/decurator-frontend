@@ -60,13 +60,13 @@ class SinglePainting extends Component {
                     {this.props.rooms.map((room,index) => {return <option key={index} value={room.id}>{room.name}</option>})}
                 </select>
                 
-                <Popup trigger={<button onClick={() => this.handleOnClick()} id="buttons" value='Add to Room'>Add to Room</button>} position="right center">
+                <Popup 
+                    trigger={ <button type="button">Add to Room </button> } 
+                    onOpen={() => this.handleOnClick()} id="buttons" value='Add to Room' position="right center">
                     <div>Painting Added</div>
                 </Popup>
-
-                    <br /><br /><br/><br/>
+                <br /><br /><br/><br/>
             </div>
-        
         )
     }
 }
@@ -74,7 +74,6 @@ class SinglePainting extends Component {
 function mapDispatchToProps(dispatch) {
     return {
         addPaintingToRoom: (roomId, painting) => dispatch(addPaintingToRoom(roomId, painting)) 
-
     }
 }
 
