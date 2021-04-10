@@ -1,6 +1,6 @@
 export const fetchRooms = () => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/rooms')
+        fetch('https://git.heroku.com/secure-dawn-14818.git/rooms')
         .then(resp => resp.json())
         .then(room => dispatch({ type: 'FETCH_ROOMS', payload: room}))
     }
@@ -8,7 +8,7 @@ export const fetchRooms = () => {
 
 export const fetchSingleRoom = (id) => {
     return dispatch => {
-        fetch(`http://127.0.0.1:3000/rooms/${id}`)
+        fetch(`https://git.heroku.com/secure-dawn-14818.git/rooms/${id}`)
         .then(resp => resp.json())
         .then(room => dispatch({ type: 'FETCH_SINGLE_ROOMS', payload: room}))
     }
@@ -16,7 +16,7 @@ export const fetchSingleRoom = (id) => {
 
 export const addRoom = (room) => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/rooms', {
+        fetch('https://git.heroku.com/secure-dawn-14818.git/rooms', {
             method: 'POST',
             body: JSON.stringify(room),
             headers: { 'Content-Type': 'application/json' }
@@ -28,7 +28,7 @@ export const addRoom = (room) => {
 
 export const deleteRoom = (id) => {
     return dispatch => {
-        fetch(`http://127.0.0.1:3000/rooms/${id}`, {
+        fetch(`https://git.heroku.com/secure-dawn-14818.git/rooms/${id}`, {
             method: 'DELETE',
             body: JSON.stringify(id)
         })
@@ -39,7 +39,7 @@ export const deleteRoom = (id) => {
 
 export const addPaintingToRoom = (id, painting) => {
     return dispatch => {
-        fetch(`http://127.0.0.1:3000/rooms/${id}`, {
+        fetch(`https://git.heroku.com/secure-dawn-14818.git/rooms/${id}`, {
             method: 'PATCH',
             headers: { 
                 'Content-Type': 'application/json',
