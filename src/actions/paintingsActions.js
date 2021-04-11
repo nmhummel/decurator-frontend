@@ -1,6 +1,6 @@
 export const fetchPaintings = () => {
     return (dispatch) => {
-        fetch('https://secure-dawn-14818.herokuapp.com/paintings', {
+        fetch('https://decurator.herokuapp.com/paintings', {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'

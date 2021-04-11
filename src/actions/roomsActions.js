@@ -1,6 +1,6 @@
 export const fetchRooms = () => {
     return dispatch => {
-        fetch('https://secure-dawn-14818.herokuapp.com/rooms', {
+        fetch('https://decurator.herokuapp.com/rooms', {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
@@ -13,7 +13,7 @@ export const fetchRooms = () => {
 
 export const fetchSingleRoom = (id) => {
     return dispatch => {
-        fetch(`https://secure-dawn-14818.herokuapp.com/rooms/${id}`, {
+        fetch(`https://decurator.herokuapp.com/rooms/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
@@ -26,7 +26,7 @@ export const fetchSingleRoom = (id) => {
 
 export const addRoom = (room) => {
     return dispatch => {
-        fetch('https://secure-dawn-14818.herokuapp.com/rooms', {
+        fetch('https://decurator.herokuapp.com/rooms', {
             method: 'POST',
             body: JSON.stringify(room),
             headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
@@ -38,7 +38,7 @@ export const addRoom = (room) => {
 
 export const deleteRoom = (id) => {
     return dispatch => {
-        fetch(`https://secure-dawn-14818.herokuapp.com/rooms/${id}`, {
+        fetch(`https://decurator.herokuapp.com/rooms/${id}`, {
             method: 'DELETE',
             body: JSON.stringify(id),
             headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
@@ -51,7 +51,7 @@ export const deleteRoom = (id) => {
 
 export const addPaintingToRoom = (id, painting) => {
     return dispatch => {
-        fetch(`https://secure-dawn-14818.herokuapp.com/rooms/${id}`, {
+        fetch(`https://decurator.herokuapp.com/rooms/${id}`, {
             method: 'PATCH',
             headers: { 
                 'Content-Type': 'application/json',
